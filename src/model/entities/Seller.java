@@ -10,7 +10,7 @@ public class Seller implements Serializable {
 	private Integer id;
 	private String name;
 	private String email;
-	private Date birthDate;
+	private java.util.Date birthDate;
 	private Double baseSalary;
 
 	private Department department;
@@ -18,7 +18,7 @@ public class Seller implements Serializable {
 	public Seller() {
 	}
 
-	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
+	public Seller(Integer id, String name, String email, java.util.Date birthDate, Double baseSalary, Department department) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -52,7 +52,7 @@ public class Seller implements Serializable {
 	}
 
 	public Date getBirthDate() {
-		return birthDate;
+		return (Date) birthDate;
 	}
 
 	public void setBirthDate(Date birthDate) {
