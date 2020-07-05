@@ -34,11 +34,15 @@ public class Program {
 		}
 		
 		System.out.println("\n=== TESTE 4: seller insert ====");
-		Seller newSeller = new Seller(null,"Greg","greg@gmail.com", new java.sql.Date(0), 4000.0, department);
+		Seller newSeller = new Seller(null,"Vagner","vagnerg@gmail.com", new java.sql.Date(0), 4000.0, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserido! Novo id = " + newSeller.getId());
 		
-		
+		System.out.println("\n=== TESTE 5: seller Update ====");
+		seller = sellerDao.findById(1);
+		seller.setName("Marta Waine");
+		sellerDao.update(seller);
+		System.out.println("Update completo!!!");
 	}
 
 }
