@@ -90,7 +90,12 @@ public class SellerDaoJDBC implements SellerDao {
 			
 			st.setInt(1, id);
 			
-			st.executeUpdate();
+			int rows = st.executeUpdate();
+			if (rows == 0 ) {
+				String msg = null;
+				throw new DbException(msg);
+			}
+			
 		}
 		catch (SQLException e) {
 			throw new DbException(e.getMessage());
